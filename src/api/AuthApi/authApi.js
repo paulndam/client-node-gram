@@ -2,15 +2,18 @@ import axios from "axios";
 
 const signin = async (user) => {
   try {
-    let response = await fetch(`${process.env.REACT_APP_API}/auth/signin`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify(user),
-    });
+    let response = await fetch(
+      `https://node-gram.herokuapp.com/api/auth/signin`,
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(user),
+      }
+    );
     return await response.json();
   } catch (err) {
     console.log(err);
