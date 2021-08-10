@@ -6,9 +6,8 @@ const signin = async (user) => {
       `https://node-gram.herokuapp.com/api/auth/signin`,
       {
         method: "POST",
-
+        mode: "no-cors",
         headers: {
-          mode: "no-cors",
           Accept: "application/json",
           "Content-Type": "application/json",
         },
